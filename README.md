@@ -48,7 +48,9 @@ This project features a heavy-duty robotics platform powered by an **ESP32 micro
                                             [ Bluetooth Serial Interface ]
                                            (PWM Controls -> BTS7960 Inputs)
 ```
-![Circuit Diagram](assets/hardware/soccer-bot.jpg)
+![Circuit Diagram](assets/hardware/Circuit_diagram.png)
+
+
 
 ## 📸 Team & Development
 
