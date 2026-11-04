@@ -1,4 +1,4 @@
-# 🏎️ ESP32 High-Speed Bluetooth Soccer Robot
+# 🏎️ ESP32 Bluetooth Soccer Robot
 
 An advanced, high-performance soccer robot engineered for speed, high torque, and precision maneuverability using ESP32 architecture and high-current motor drivers.
 
