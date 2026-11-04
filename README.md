@@ -61,5 +61,8 @@ Designed, built, and programmed by the core development team for high-speed robo
 ### Workspace & Hardware Testing
 ![Build Progress](assets/hardware/soccer-bot.jpg)
 
+![Soccer Bot Hardware Showcase](assets/media/bot_showcase.gif)
+
+
 ### Core Team
 ![Team Work](<assets/media/Team Work.jpg>)
