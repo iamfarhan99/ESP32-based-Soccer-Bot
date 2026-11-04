@@ -6,6 +6,8 @@ An advanced, high-performance soccer robot engineered for speed, high torque, an
 
 ## 📌 Project Overview
 This project features a heavy-duty robotics platform powered by an **ESP32 microcontroller**. Designed specifically for robotics soccer segments, the bot utilizes dual **BTS7960 motor drivers** to handle intense current demands, an **XL4015 Buck Converter** for step-down power regulation, and an **11.1V 3S LiPo battery** for high-speed responsiveness via custom Bluetooth PWM logic.
+
+
 ![Soccer Bot Action](assets/media/bot_demo.gif)
 
 
