@@ -51,8 +51,10 @@ This project features a heavy-duty robotics platform powered by an **ESP32 micro
 ![Circuit Diagram](assets/hardware/Circuit_diagram.png)
 
 
-
 ## 📸 Team & Development
 
-![Team Work](<assets/media/Team Work.jpg>)
+| Workspace & Build | Team Members |
+| :---: | :---: |
+| ![Build Progress](assets/hardware/soccer-bot.jpg) | ![Team Work](<assets/media/Team Work.jpg>) |
+
 
