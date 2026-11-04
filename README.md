@@ -50,23 +50,12 @@ This project features a heavy-duty robotics platform powered by an **ESP32 micro
 ```
 ![Circuit Diagram](assets/hardware/Circuit_diagram.png)
 
-## 🛠️ Build Process & Hardware Assembly
-
-The robot chassis was custom-designed and assembled through multiple iterations. Below is a snapshot of the initial 50% physical build status alongside the final mechanical assembly.
-
-- **Chassis Material:** Acrylic / 3D Printed Frame
-- **Assembly Stage:** Mid-build testing & Soldering complete
-
-| Work in Progress (50%) | Final Assembly |
-| :---: | :---: |
-| ![Build Progress](assets/hardware/soccer-bot.jpg) | ![Assembly](assets/hardware/final_build.jpg) |
-
-
-
 ## 📸 Team & Development
 
-| Workspace & Build | Team Members |
-| :---: | :---: |
-| ![Build Progress](assets/hardware/soccer-bot.jpg) | ![Team Work](<assets/media/Team Work.jpg>) |
+Designed, built, and programmed by the core development team for high-speed robotic soccer performance.
 
+### Workspace & Hardware Testing
+![Build Progress](assets/hardware/soccer-bot.jpg)
 
+### Core Team
+![Team Work](<assets/media/Team Work.jpg>)
