@@ -63,11 +63,11 @@ Participating in ROBO LEAGUE 2026 provided practical experience operating a self
 
 The following design upgrades are planned for the next hardware revision:
 
-- [ ] Replace loose jumper wires with a soldered dot-board or custom PCB layout.
-- [ ] Add optocoupler isolation between ESP32 GPIOs and motor driver logic pins.
-- [ ] Improve shock-absorption padding around the microcontroller chassis.
-- [ ] Implement flyback protection against motor inductive current spikes.
-- [ ] Perform stress testing under sustained high-load stall conditions.
+-  Replace loose jumper wires with a soldered dot-board or custom PCB layout.
+-  Add optocoupler isolation between ESP32 GPIOs and motor driver logic pins.
+-  Improve shock-absorption padding around the microcontroller chassis.
+-  Implement flyback protection against motor inductive current spikes.
+-  Perform stress testing under sustained high-load stall conditions.
 
 ---
 
@@ -82,13 +82,13 @@ The following design upgrades are planned for the next hardware revision:
 ### 📸 Competition Gallery
 
 #### Robot Lineup
-![Robot Lineup](../assets/bot_lineup.jpg)
+![Robot Lineup](../assets/Lineup.jpg)
 
 #### Competition Arena
-![Competition Arena](../assets/arena_match.jpg)
+![Competition Arena](../assets/COMPETITION_ARENA.jpg)
 
 #### Match Experience
-![Match Experience](../assets/match_photo.jpg)
+![Match Experience](../assets/ROBOT_ARENA.jpg)
 
 ---
 
