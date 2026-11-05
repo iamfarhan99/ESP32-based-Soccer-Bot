@@ -58,6 +58,16 @@ This project features a heavy-duty robotics platform powered by an **ESP32 micro
 
 Designed, built, and programmed by the core development team for high-speed robotic soccer performance.
 
+---
+
+## 🏆 Competitions & Field Testing Logs
+
+| Competition | Date | Status | Documentation & Failure Analysis |
+| :--- | :--- | :--- | :--- |
+| **ROBO LEAGUE 2026 (BRACU ROBU)** | Nov 2026 | Field Tested | [View Full Match Log ➔](competitions/ROBO-LEAGUE-2026/README.md) |
+
+---
+
 ### Workspace & Hardware Testing
 ![Build Progress](assets/hardware/soccer-bot.jpg)
 
