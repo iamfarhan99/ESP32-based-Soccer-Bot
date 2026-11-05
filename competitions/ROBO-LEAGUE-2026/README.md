@@ -82,15 +82,13 @@ The following design upgrades are planned for the next hardware revision:
 ### 📸 Competition Gallery
 
 #### Robot Lineup
-![Robot Lineup](competitions/ROBO-LEAGUE-2026/Assets/Lineup.jpg)
+![Robot Lineup](Assets/Lineup.jpg)
 
 #### Competition Arena
-![Competition Arena](competitions/ROBO-LEAGUE-2026/Assets/COMPETITION_ARENA.jpg)
+![Competition Arena](Assets/COMPETITION_ARENA.jpg)
 
 #### Match Experience
-![Match Experience](competitions/ROBO-LEAGUE-2026/Assets/ROBOT_LINEUP.jpg)
-
----
+![Match Experience](Assets/ROBOT_ARENA.jpg)
 
 ## 📚 7. Key Takeaways
 
