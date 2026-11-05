@@ -54,19 +54,32 @@ This project features a heavy-duty robotics platform powered by an **ESP32 micro
 ```
 ![Circuit Diagram](assets/hardware/Circuit_diagram.png)
 
+---
+
+
+## 🏆 Competitions & Real-World Testing
+
+### ⚽ ROBO LEAGUE 2026 — BRAC University (ROBU)
+**Date:** November 2026 | **Role:** Hardware Debugging & Telemetry Lead | 
+
+> **Match Experience:** Deployed the bot in full-contact soccer matches. Analyzed real-time power supply dynamics and handled mid-match physical collision faults.
+
+#### 🛠️ Key Takeaways & Technical Artifacts
+* **Failure Analysis:** Documented mid-game power short, thermal shutdown, and back-EMF spikes.
+* **Match Media:** Arena footage, bot lineup, and hardware diagnostic logs included.
+* **Certificate:** Official participation certificate attached.
+
+👉 **[Explore Full ROBO LEAGUE 2026 Technical Report & Gallery ➔](competitions/ROBO-LEAGUE-2026/README.md)**
+
+---
+
+
 ## 📸 Team & Development
 
 Designed, built, and programmed by the core development team for high-speed robotic soccer performance.
 
 ---
 
-## 🏆 Competitions & Field Testing Logs
-
-| Competition | Date | Status | Documentation & Failure Analysis |
-| :--- | :--- | :--- | :--- |
-| **ROBO LEAGUE 2026 (BRACU ROBU)** | Nov 2026 | Field Tested | [View Full Match Log ➔](competitions/ROBO-LEAGUE-2026/README.md) |
-
----
 
 ### Workspace & Hardware Testing
 ![Build Progress](assets/hardware/soccer-bot.jpg)
