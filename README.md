@@ -64,7 +64,7 @@ This project features a heavy-duty robotics platform powered by an **ESP32 micro
 
 > **Match Experience:** Deployed the bot in full-contact soccer matches. Analyzed real-time power supply dynamics and handled mid-match physical collision faults.
 
-#### 🛠️ Key Takeaways & Technical Artifacts
+  🛠️ Key Takeaways & Technical Artifacts
 * **Failure Analysis:** Documented mid-game power short, thermal shutdown, and back-EMF spikes.
 * **Match Media:** Arena footage, bot lineup, and hardware diagnostic logs included.
 * **Certificate:** Official participation certificate attached.
