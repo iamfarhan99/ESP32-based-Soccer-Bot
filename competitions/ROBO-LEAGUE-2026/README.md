@@ -75,20 +75,20 @@ The following design upgrades are planned for the next hardware revision:
 
 ### 📄 Participation Certificate
 *(Official certificate will be uploaded once issued by ROBU)*
-![Official Certificate](../assets/robu_2026_certificate.jpg)
+![Official Certificate](../Assets/robu_2026_certificate.jpg)
 
 ---
 
 ### 📸 Competition Gallery
 
 #### Robot Lineup
-![Robot Lineup](../assets/Lineup.jpg)
+![Robot Lineup](../Assets/Lineup.jpg)
 
 #### Competition Arena
-![Competition Arena](../assets/COMPETITION_ARENA.jpg)
+![Competition Arena](../Assets/COMPETITION_ARENA.jpg)
 
 #### Match Experience
-![Match Experience](../assets/ROBOT_ARENA.jpg)
+![Match Experience](../Assets/ROBOT_ARENA.jpg)
 
 ---
 
