@@ -1,99 +1,107 @@
-# 🏟️ ROBO LEAGUE 2026 – BRACU ROBU Soccer Bot Competition
+# ROBO LEAGUE 2026
 
-A comprehensive competition documentation and technical post-mortem of our ESP32-based Bluetooth soccer robot, covering hardware setup, match performance, failure analysis, and future engineering iterations.
+This is our report for ROBO LEAGUE 2026, organized by the Robotics Club of BRAC University (ROBU). It covers our robot, what happened in the match, and what we plan to fix.
 
----
+## Event Details
 
-## 📌 1. Event Overview
+- **Event:** ROBO LEAGUE 2026
+- **Organizer:** Robotics Club of BRAC University (ROBU)
+- **Category:** Soccer Bot
+- **Date:** November 2026
+- **Control:** Bluetooth
+- **Team:** Farhan, Shuvo, Rahib, Sajid, Joya
 
-| Information | Details |
-| :--- | :--- |
-| **Event** | ROBO LEAGUE 2026 |
-| **Organizer** | Robotics Club of BRAC University (ROBU) |
-| **Category** | Soccer Bot Competition |
-| **Robot Platform** | ESP32 Microcontroller |
-| **Control Method** | Bluetooth Wireless Control |
-| **Motor Drivers** | Dual BTS7960 High-Current Drivers |
-| **Power Source** | 11.1V 3S LiPo Battery |
-| **Status** | Participated & Field Tested |
+## Robot Setup
 
----
+- ESP32 for Bluetooth and motor control
+- Two BTS7960 motor drivers
+- Two 37GB 800 RPM metal gear motors
+- 11.1V 3S LiPo battery
+- XL4015 buck converter (11.1V to 5V for the ESP32)
 
-## 🤖 2. Robot Architecture
+For the wiring and pin details, see the [main README](../../README.md).
 
-The robot was designed around an ESP32 microcontroller, providing high-speed wireless Bluetooth communication and real-time PWM motor control.
+## Match Summary
 
-### Key Hardware Components
-* **ESP32:** Core microcontroller handling Bluetooth receiver logic and PWM motor control.
-* **BTS7960 Motor Drivers:** High-current H-bridge drivers for rapid direction switching and high torque.
-* **DC Gear Motors:** High-RPM motors responsible for robot navigation and ball interaction.
-* **11.1V 3S LiPo Battery:** Primary high-discharge power source.
-* **XL4015 Buck Converter:** Step-down converter regulating battery voltage to a stable 5V supply for the ESP32 logic rail.
+At the start of the match, the robot responded well to commands. It accelerated fast and turned easily.
 
----
+After a hard collision, the Bluetooth connection became unstable and then dropped completely. The robot stopped responding. When we checked it, the ESP32 was unusually hot. We left the match to protect the hardware.
 
-## ⚽ 3. Competition Experience
+## What Went Wrong
 
-Participating in ROBO LEAGUE 2026 provided practical experience operating a self-built soccer robot in a live match environment.
+What we saw:
 
-* During the initial phase, the robot responded well to Bluetooth commands, demonstrating good acceleration and maneuverability.
-* Following a strong physical collision mid-game, the Bluetooth connection became unstable and eventually disconnected completely. 
-* Upon physical inspection, the ESP32 chip felt unusually hot.
-* Due to total communication loss, we stepped back from the match for safety and hardware analysis.
+1. The Bluetooth connection became unstable after a collision and then dropped.
+2. The robot stopped responding to commands.
+3. The ESP32 was very hot afterwards.
 
----
+We have not found the exact cause yet. These are the most likely reasons:
 
-## 🔍 4. Failure Analysis & Post-Mortem
+1. **Voltage drop on the 5V line.** In a collision, the motors can pull a large current. This can pull down the battery voltage and the 5V output. The ESP32 can lose Bluetooth when its supply drops. To check this, measure the 5V line while the motors are stalled.
+2. **Loose wires.** Jumper wires can move or touch each other during a hit. To check this, inspect every connection and test again after soldering.
+3. **Electrical noise and ground problems.** Large motor currents can disturb the ESP32 through shared ground wires. To check this, use a star ground and add small capacitors across the motor terminals.
+4. **Heat in the ESP32 board regulator.** The small regulator on the ESP32 board can get hot if the supply or the load is not stable. To check this, measure the 5V line and the board temperature under load.
 
-### Observed Issues
-1. **Bluetooth Disconnection:** Total loss of wireless telemetry following physical impact.
-2. **ESP32 Overheating:** Microcontroller experienced sudden thermal runaway / power surge.
-3. **Control Lock:** Complete loss of command execution.
+The BTS7960 already has built-in diodes for motor voltage spikes, so extra flyback diodes are not our first priority.
 
-### Potential Causes Under Investigation
-* **Wiring Displacement:** Loose jumper wires shifting during impact, causing a momentary short circuit on logic pins.
-* **Motor Back-EMF:** High inductive spikes generated during motor stall/collision feeding back into the logic circuit without optocoupler isolation.
-* **Regulator Stress:** Over-current entering the XL4015 buck converter or ESP32 internal regulator.
+Testing is still going on to find the exact fault.
 
-> **Note:** Hardware inspection and diagnostic testing are currently ongoing to isolate the exact fault component.
+## Planned Fixes
 
----
+Hardware:
+- Solder everything on a dot board or PCB.
+- Add a large capacitor (470 to 1000 µF) on the 5V line.
+- Add a 0.1 µF ceramic capacitor across each motor's terminals.
+- Use a star ground and add a battery fuse.
+- Mount the ESP32 with shock protection and add strain relief on the wires.
 
-## 🛠️ 5. Future Improvement Roadmap
+Firmware:
+- Speed ramping, so the motors do not reverse at full power in one instant. This is already in the current code.
+- An optional timeout that stops the robot if no command arrives.
 
-The following design upgrades are planned for the next hardware revision:
+Testing:
+- Run stall tests and repeated collision tests before the next event.
 
--  Replace loose jumper wires with a soldered dot-board or custom PCB layout.
--  Add optocoupler isolation between ESP32 GPIOs and motor driver logic pins.
--  Improve shock-absorption padding around the microcontroller chassis.
--  Implement flyback protection against motor inductive current spikes.
--  Perform stress testing under sustained high-load stall conditions.
+## Certificate
 
----
+The participation certificate will be added after ROBU issues it.
 
-## 📜 6. Certification & Gallery
+<!-- When the certificate is ready, upload it to competitions/Assets/robu_2026_certificate.jpg and remove the arrows around the next line.
 
-### 📄 Participation Certificate
-*(Official certificate will be uploaded once issued by ROBU)*
-![Official Certificate](../Assets/robu_2026_certificate.jpg)
 
----
+![Participation Certificate](https://github.com/iamfarhan99/ESP32-based-Soccer-Bot/raw/main/competitions/Assets/robu_2026_certificate.jpg)
 
-### 📸 Competition Gallery
 
-#### Robot Lineup
-![Robot Lineup](Assets/Lineup.jpg)
+-->
 
-#### Competition Arena
-![Competition Arena](Assets/COMPETITION_ARENA.jpg)
+## Photos
 
-#### Match Experience
-![Match Experience](Assets/ROBOT_ARENA.jpg)
+**Robot lineup**
 
-## 📚 7. Key Takeaways
 
-This competition provided valuable hands-on experience in:
-* Real-world embedded systems operation under competitive stress.
-* Wireless telemetry debugging in noisy environments.
-* Identifying physical collision vulnerability in prototype robotics hardware.
-* Performing structured failure analysis to improve future iterations.
+
+![Robot Lineup](https://github.com/iamfarhan99/ESP32-based-Soccer-Bot/raw/main/competitions/ROBO-LEAGUE-2026/Assets/Lineup.jpg)
+
+
+
+**Competition arena**
+
+
+
+![Competition Arena](https://github.com/iamfarhan99/ESP32-based-Soccer-Bot/raw/main/competitions/ROBO-LEAGUE-2026/Assets/COMPETITION_ARENA.jpg)
+
+
+
+**During the match**
+
+
+
+![Match](https://github.com/iamfarhan99/ESP32-based-Soccer-Bot/raw/main/competitions/ROBO-LEAGUE-2026/Assets/ROBOT_ARENA.jpg)
+
+
+
+## What We Learned
+
+- A robot must survive collisions. Good wiring, stable power and strong mounting matter as much as the code.
+- Wireless problems can come from the power supply, not only from the radio.
+- Writing down what failed helps us build a better version next time.
