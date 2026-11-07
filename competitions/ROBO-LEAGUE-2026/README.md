@@ -1,119 +1,130 @@
-<div align="center">
+<h1 align="center">ROBO LEAGUE 2026</h1>
 
-# ROBO LEAGUE 2026
+<p align="center">
+  <b>Event report for our ESP32 Bluetooth soccer robot</b>
+</p>
 
-**Competition report · Soccer Bot**
+<p align="center">
+  <img src="https://img.shields.io/badge/Organiser-BRAC%20University%20ROBU-6A1B9A" alt="Organiser">
+  <img src="https://img.shields.io/badge/Category-Soccer%20Bot-2E7D32" alt="Category">
+  <img src="https://img.shields.io/badge/Platform-ESP32-E7352C?logo=espressif&logoColor=white" alt="ESP32">
+  <img src="https://img.shields.io/badge/Status-Participated-0082FC" alt="Status">
+</p>
 
-[← Back to main README](../../README.md)
-
-</div>
+<p align="center">
+  <a href="../../README.md">Back to the main project</a>
+</p>
 
 ---
 
-This is our report for ROBO LEAGUE 2026, organized by the Robotics Club of BRAC University (ROBU). It covers our robot, what happened in the match, and what we plan to fix.
+## Table of Contents
 
-## At a Glance
+- [Event at a Glance](#event-at-a-glance)
+- [Robot Setup](#robot-setup)
+- [What Happened](#what-happened)
+- [What Went Wrong](#what-went-wrong)
+- [Fixes for the Next Version](#fixes-for-the-next-version)
+- [Gallery](#gallery)
+- [Participation Certificate](#participation-certificate)
+- [What We Learned](#what-we-learned)
+
+---
+
+## Event at a Glance
 
 | | |
 |:--|:--|
 | **Event** | ROBO LEAGUE 2026 |
-| **Organizer** | Robotics Club of BRAC University (ROBU) |
-| **Category** | Soccer Bot |
+| **Organiser** | Robotics Club of BRAC University (ROBU) |
+| **Category** | Soccer Bot Competition |
 | **Date** | November 2026 |
-| **Control** | Bluetooth |
-| **Team** | Farhan, Shuvo, Rahib, Sajid, Joya |
-| **Outcome** | Left the match after a hardware fault |
+| **Robot** | ESP32-based Bluetooth soccer robot |
+| **Status** | Participated |
+
+---
 
 ## Robot Setup
 
-- ESP32 for Bluetooth and motor control
-- Two BTS7960 motor drivers
-- Two 37GB 800 RPM metal gear motors
-- 11.1V 3S LiPo battery
-- XL4015 buck converter (11.1V to 5V for the ESP32)
+| Part | Details |
+|:--|:--|
+| **Controller** | ESP32 with Bluetooth Classic and PWM motor control |
+| **Motor drivers** | 2x BTS7960 high-current drivers |
+| **Motors** | 2x 37GB 800 RPM metal gear motors |
+| **Power** | 11.1 V 3S LiPo battery, with an XL4015 buck converter giving 5 V to the ESP32 |
 
-For wiring and pin details, see the [main README](../../README.md).
+For wiring and code, see the [main README](../../README.md).
 
-## Match Summary
+---
 
-At the start of the match, the robot responded well to commands. It accelerated fast and turned easily.
+## What Happened
 
-After a hard collision, the Bluetooth connection became unstable and then dropped completely. The robot stopped responding. When we checked it, the ESP32 was unusually hot. We left the match to protect the hardware.
+<p align="center">
+  <img src="Assets/match_timeline.png" alt="Match timeline" width="900">
+</p>
+
+The robot started the match well. It followed Bluetooth commands and had good acceleration and control. Then the robot suffered a hard collision, and the Bluetooth connection became unstable and finally dropped. We could no longer control the robot, so we withdrew from the match to protect the hardware.
+
+---
 
 ## What Went Wrong
 
-**What we saw**
+After the match, the ESP32 was very hot. Further testing showed that the ESP32 was **permanently damaged**. The rest of the robot was fine.
 
-1. The Bluetooth connection became unstable after a collision and then dropped.
-2. The robot stopped responding to commands.
-3. The ESP32 was very hot afterwards.
+We could not find one exact cause. But everything points to an **electrical problem, not the code**. The code only reads one-letter commands and sets PWM outputs, so it is very unlikely to damage the board.
 
-> [!NOTE]
-> We have not found the exact cause yet. The table below lists the most likely reasons and how we plan to check each one.
+These are the three most likely causes:
 
-| Possible cause | What may happen | How we will check |
-|:--|:--|:--|
-| **Voltage drop on the 5V line** | In a collision, the motors pull a large current. This can pull down the battery voltage and the 5V output, and the ESP32 can lose Bluetooth. | Measure the 5V line while the motors are stalled. |
-| **Loose wires** | Jumper wires can move or touch each other during a hit. | Check every connection, then test again after soldering. |
-| **Electrical noise and ground problems** | Large motor currents can disturb the ESP32 through shared ground wires. | Use a star ground and add small capacitors across the motor terminals. |
-| **Heat in the ESP32 board regulator** | The small regulator on the ESP32 board can get hot if the supply or the load is not stable. | Measure the 5V line and the board temperature under load. |
+| Likely cause | What it means |
+|:--|:--|
+| **Loose wires** | The robot used jumper wires. A hard hit can push a wire out of place and make it touch the wrong pin. |
+| **Voltage spikes from the motors** | When a motor is stopped or reversed suddenly in a crash, it can send a sharp voltage spike back into the circuit. Our circuit had no protection against this. |
+| **Power overload** | A crash makes the motors pull a lot of current, which can pull the battery voltage down. Also, the ESP32's 3V3 pin was powering the logic side of both motor drivers, so it carried extra load. |
 
-The BTS7960 already has built-in diodes for motor voltage spikes, so extra flyback diodes are not our first priority.
+---
 
-Testing is still going on to find the exact fault.
+## Fixes for the Next Version
 
-## Planned Fixes
+Since we could not point to one cause, we will fix all three. This is what we will change:
 
-**Hardware**
+| Problem | Fix |
+|:--|:--|
+| Wires can come loose in a crash | Solder everything on a dot-board or PCB |
+| Motors send voltage spikes | Add protection parts (flyback diodes and optocoupler isolation) so spikes cannot reach the ESP32 |
+| Battery voltage drops during hard hits | Add a large capacitor on the power lines to smooth out the drops |
+| ESP32 powers the driver logic | Give the driver logic its own regulated power supply |
+| Shocks reach the ESP32 | Mount it on shock-absorbing padding |
+| The robot keeps its last command if the signal is lost without a clean disconnect | Add a timeout in the code: if no command arrives for a short time, stop the motors |
+| We found the weak spots only during the match | Test the robot with hard stops and collisions before the next event |
 
-- Solder everything on a dot board or PCB.
-- Add a large capacitor (470 to 1000 µF) on the 5V line.
-- Add a 0.1 µF ceramic capacitor across each motor's terminals.
-- Use a star ground and add a battery fuse.
-- Mount the ESP32 with shock protection and add strain relief on the wires.
+---
 
-**Firmware**
+## Gallery
 
-- Speed ramping, so the motors do not reverse at full power in one instant. This is already in the current code.
-- An optional timeout that stops the robot if no command arrives.
+<p align="center">
+  <img src="Assets/COMPETITION_ARENA.jpg" alt="Competition arena" width="620"><br>
+  <sub>Competition arena</sub>
+</p>
 
-**Testing**
+<p align="center">
+  <img src="Assets/Lineup.jpg" alt="Robot lineup" width="300">
+  &nbsp;&nbsp;&nbsp;
+  <img src="Assets/ROBOT_ARENA.jpg" alt="Robot in the arena" width="300"><br>
+  <sub>Robot lineup &nbsp;&nbsp;|&nbsp;&nbsp; Robot in the arena</sub>
+</p>
 
-- Run stall tests and repeated collision tests before the next event.
+---
 
-## Certificate
+## Participation Certificate
 
-The participation certificate will be added after ROBU issues it.
+<p align="center">
+  <img src="Assets/robu_2026_certificate.jpg" alt="ROBO LEAGUE 2026 participation certificate" width="640">
+</p>
 
-<!-- When the certificate is ready, upload it to competitions/Assets/robu_2026_certificate.jpg and remove the arrows around the next line.
-
-
-![Participation Certificate](https://github.com/iamfarhan99/ESP32-based-Soccer-Bot/raw/main/competitions/Assets/robu_2026_certificate.jpg)
-
-
--->
-
-## Photos
-
-<table>
-  <tr>
-    <td width="50%"><img src="Assets/Lineup.jpg" alt="Robot lineup"></td>
-    <td width="50%"><img src="Assets/COMPETITION_ARENA.jpg" alt="Competition arena"></td>
-  </tr>
-  <tr>
-    <td align="center"><sub>Robot lineup</sub></td>
-    <td align="center"><sub>Competition arena</sub></td>
-  </tr>
-</table>
-
-<div align="center">
-<img src="Assets/ROBOT_ARENA.jpg" width="60%" alt="During the match">
-<br>
-<sub>During the match</sub>
-</div>
+---
 
 ## What We Learned
 
-- A robot must survive collisions. Good wiring, stable power and strong mounting matter as much as the code.
-- Wireless problems can come from the power supply, not only from the radio.
-- Writing down what failed helps us build a better version next time.
+- How a self-built electronic system behaves under real competition stress
+- How hard it is to debug a wireless connection in a noisy, crowded place
+- That crash protection and clean power matter as much as speed and torque
+- How to turn an unexplained failure into clear design changes
