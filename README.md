@@ -208,7 +208,7 @@ Reports from the events this robot has taken part in. New events will be added h
 Designed and built by our robotics team.
 
 - **Firmware, wiring design and documentation:** Farhan Shahriar Shihab ([@iamfarhan99](https://github.com/iamfarhan99))
-- **Hardware and Assembly:** Ashraful Islam Shuvo, Tasnimul Hasan
+- **Hardware and Assembly:** Ashraful Islam Shuvo ([@iamashrafulshuvo](https://github.com/iamashrafulshuvo)), Tasnimul Hasan
 - **Support:** Sadia Tanjim Joya, Sajid Akhter Bhuiyan
 
  ---
