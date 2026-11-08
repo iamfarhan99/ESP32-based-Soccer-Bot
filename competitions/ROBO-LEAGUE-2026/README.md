@@ -117,7 +117,7 @@ Since we could not point to one cause, we will fix all three. This is what we wi
 ## Participation Certificate
 
 <p align="center">
-  <img src="Assets/robu_2026_certificate.jpg" alt="ROBO LEAGUE 2026 participation certificate" width="640">
+  <img src="Assets/Robu_League_certificate.jpg" alt="ROBO LEAGUE 2026 participation certificate" width="640">
 </p>
 
 ---
