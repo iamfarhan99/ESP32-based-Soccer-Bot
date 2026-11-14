@@ -32,7 +32,6 @@
 - [Getting Started](#getting-started)
 - [Gallery](#gallery)
 - [Competitions](#competitions)
-- [Future Improvements](#future-improvements)
 - [License](#license)
 - [Team](#team)
 
@@ -188,17 +187,6 @@ Reports from the events this robot has taken part in. New events will be added h
 
 ---
 
-## Future Improvements
-
-- Solder the circuit on a dot-board or a custom PCB instead of using jumper wires
-- Add protection against voltage spikes from the motors
-- Add optocoupler isolation between the ESP32 and the driver inputs
-- Add a large capacitor on the power lines
-- Mount the ESP32 on shock-absorbing padding
-- Stop the motors if no command arrives for a short time
-
----
-
 ## Team
 
 <p align="center">
@@ -207,9 +195,13 @@ Reports from the events this robot has taken part in. New events will be added h
 
 Designed and built by our robotics team.
 
-- **Firmware, wiring design and documentation:** Farhan Shahriar Shihab ([@iamfarhan99](https://github.com/iamfarhan99))
-- **Hardware and Assembly:** Ashraful Islam Shuvo ([@iamashrafulshuvo](https://github.com/iamashrafulshuvo)), Tasnimul Hasan
-- **Support:** Sadia Tanjim Joya, Sajid Akhter Bhuiyan
+| Member | Role |
+|:--|:--|
+| **Farhan Shahriar Shihab** ([@iamfarhan99](https://github.com/iamfarhan99)) | Firmware, Wiring Design & Documentation |
+| **Ashraful Islam Shuvo** ([@iamashrafulshuvo](https://github.com/iamashrafulshuvo)) | Hardware & Assembly |
+| **Tasnimul Hasan** | Testing & Driving|
+| **Sajid Akhter Bhuiyan** | support |
+| **Sadia Tanjim Joya** | Support |
 
  ---
 
