@@ -132,10 +132,9 @@ These are suspected causes only. We have not confirmed which one was responsible
 ### Arena & Robots
 
 <p align="center">
-  <img src="Gallery/Soccer_Arena.jpeg" width="320" alt="Robo Soccer arena">
-  <img src="media/gallery/bot-lineup.jpg" width="320" alt="Robot lineup">
+  <img src="Gallery/Soccer_Arena.jpeg" width="400" alt="Robo Soccer arena">
 </p>
-<p align="center"><i>Robo Soccer arena &nbsp;    |&nbsp; Robot lineup</i></p>
+<p align="center"><i>Robo Soccer arena</i></p>
 
 ### Visit
 
