@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Organiser-Robo%20Tech%20Olympiad%2C%20Daffodil%20University-1565C0" alt="Organiser">
+  <img src="https://img.shields.io/badge/Organiser-Robo%20Tech%20valley%2C%20Daffodil%20University-1565C0" alt="Organiser">
   <img src="https://img.shields.io/badge/Category-Robo%20Soccer-2E7D32" alt="Category">
   <img src="https://img.shields.io/badge/Result-Top%208%20of%2023-F9A825" alt="Result">
   <img src="https://img.shields.io/badge/Platform-ESP32-E7352C?logo=espressif&logoColor=white" alt="ESP32">
@@ -44,7 +44,6 @@
 | **Participating institutions** | 65+ |
 | **Bots in Robo Soccer** | 23 |
 | **Our result** | **Top 8** |
-| **Driver** | Farhan Shahriar Shihab |
 
 <p align="center">
   <img src="media/bot.jpg" alt="Our soccer robot" width="560">
@@ -75,7 +74,7 @@ After the power problems at ROBO LEAGUE, we reworked the power side of the robot
 | **Motor driver power** | No bulk capacitor | **1000 µF** capacitor across B+ and B- of the motor driver | Absorb voltage spikes and sags from the motors |
 | **ESP32 supply** | No local capacitor | **470 µF** capacitor between ESP32 VIN and GND | Keep the logic supply stable |
 | **Driver logic supply** | `VCC`, `R_EN` and `L_EN` of both drivers came from the ESP32 3V3 pin | `VCC`, `R_EN` and `L_EN` of both drivers come directly from the **buck converter 5 V** | The 3V3 pin carried the driver load and the ESP32 was getting hot |
-| **Firmware** | ROBO LEAGUE version | Small changes in the latest `soccer_bot_control.ino` | [ .........] |
+| **Firmware** | ROBO LEAGUE version | Small changes in the latest `soccer_bot_control.ino` | [Added smooth acceleration/deceleration ramping, a short delay when reversing direction, and non-blocking motor updates] |
 
 ---
 
