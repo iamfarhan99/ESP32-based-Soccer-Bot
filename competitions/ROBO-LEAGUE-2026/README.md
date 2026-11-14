@@ -37,7 +37,7 @@
 | **Event** | ROBO LEAGUE 2026 |
 | **Organiser** | Robotics Club of BRAC University (ROBU) |
 | **Category** | Soccer Bot Competition |
-| **Date** | November 2026 |
+| **Date** | 5 November 2026 |
 | **Robot** | ESP32-based Bluetooth soccer robot |
 | **Status** | Participated |
 
