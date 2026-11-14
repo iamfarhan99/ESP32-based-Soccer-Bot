@@ -45,8 +45,9 @@
 | **Bots in Robo Soccer** | 23 |
 | **Our result** | **Top 8** |
 
+
 <p align="center">
-  <img src="media/bot.jpg" alt="Our soccer robot" width="560">
+  <img src="Gallery/Our_soccer.jpg" alt="Our soccer robot" width="560">
 </p>
 
 ---
@@ -123,27 +124,28 @@ These are suspected causes only. We have not confirmed which one was responsible
 ### Event Day
 
 <p align="center">
-  <img src="media/gallery/participant-badge.jpg" width="320" alt="Participant badge">
-  <img src="media/gallery/opening-ceremony.jpg" width="320" alt="Opening ceremony">
+  <img src="Gallery/Participant_badge.jpeg" width="320" alt="Participant badge">
+  <img src="Gallery/Event_gate.jpeg" width="320" alt="Event Gate">
 </p>
-<p align="center"><i>Participant badge &nbsp;|&nbsp; Opening ceremony</i></p>
+<p align="center"><i>Participant badge &nbsp;|&nbsp; Event Gate</i></p>
 
 ### Arena & Robots
 
 <p align="center">
-  <img src="media/gallery/arena.jpg" width="320" alt="Robo Soccer arena">
+  <img src="Gallery/Soccer_Arena.jpeg" width="320" alt="Robo Soccer arena">
   <img src="media/gallery/bot-lineup.jpg" width="320" alt="Robot lineup">
 </p>
-<p align="center"><i>Robo Soccer arena &nbsp;|&nbsp; Robot lineup</i></p>
+<p align="center"><i>Robo Soccer arena &nbsp;    |&nbsp; Robot lineup</i></p>
 
 ### Visit
 
 <p align="center">
-  <img src="media/gallery/vc-dean-visit.jpg" width="320" alt="Vice Chancellor and Dean visit">
+  <img src="Gallery/Officials_visit.jpeg" width="320" alt="University Officials">
 </p>
-<p align="center"><i>Visit by the Vice Chancellor and the Dean</i></p>
+<p align="center"><i>Visit by the University Officials</i></p>
 
 ---
+
 
 ## Participation Certificate
 
