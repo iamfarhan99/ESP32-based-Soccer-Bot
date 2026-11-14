@@ -49,6 +49,8 @@ An **ESP32** receives simple one-letter commands from an Android app over Blueto
 
 - **Strong drive:** the BTS7960 drivers (43 A peak each) are powered straight from the battery for high torque and fast response.
 - **Full movement control:** forward, backward, spin left, spin right, four curved moves and stop.
+- **Smooth drive:** acceleration and deceleration are ramped, which reduces current spikes.
+- **Reversal protection:** a short pause when changing direction protects the drivers and motors.
 - **Adjustable speed:** ten speed levels that change instantly, even while the robot is moving.
 - **Low-noise motors:** 20 kHz PWM keeps the motors free from audible whine.
 - **Bluetooth failsafe:** the robot stops on its own if the phone disconnects.
@@ -179,11 +181,12 @@ The serial monitor (115200 baud) prints every command the robot receives, which 
 
 ## Competitions
 
-Reports from the events this robot has taken part in. New events will be added here.
+Reports from the events this robot has taken part in.
 
 | Event | Organiser | Report |
 |:--|:--|:--|
 | ROBO LEAGUE 2026 | Robotics Club of BRAC University (ROBU) | [Read the report](competitions/ROBO-LEAGUE-2026/README.md) |
+| 6th International Robo Tech Olympiad 2026 | Robo Tech Valley (hosted by Daffodil International University) | [Read the report](competitions/ROBO-TECH-OLYMPIAD-2026/README.md) |
 
 ---
 
@@ -200,9 +203,9 @@ Designed and built by our robotics team.
 | **Farhan Shahriar Shihab** ([@iamfarhan99](https://github.com/iamfarhan99)) | Firmware, Wiring Design & Documentation |
 | **Ashraful Islam Shuvo** ([@iamashrafulshuvo](https://github.com/iamashrafulshuvo)) | Hardware & Assembly |
 | **Tasnimul Hasan** | Testing & Driving|
-| **Sajid Akhter Bhuiyan** | support |
 | **Sadia Tanjim Joya** | Support |
 
+> Ashraful Islam Shuvo maintains his own version of this project: [Soccer-bot](https://github.com/iamashrafulshuvo/Soccer-bot)
  ---
 
 ## License
